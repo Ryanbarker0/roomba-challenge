@@ -29,10 +29,22 @@ module.exports = (roomDimensions, startCoords, directions, dirtCoords) => {
                 console.log('default output')
         }
     }
-    directions.forEach( (direction) => {
+
+    const checkForDirtPatch = () => {
+        dirtCoords.forEach((dirtPatch, index) => {
+            const currentLocation = `${roombaLocation['x']} ${roombaLocation['y']}`
+            if (currentLocation === dirtPatch) {
+                console.log(dirtCoords[index])
+                patchesCleaned++
+            }
+        })
+    }
+
+    directions.forEach( direction => {
         console.log({direction, roombaLocation})
         directRoomba(direction)
+        checkForDirtPatch()
     })
 
-    console.log(roombaLocation)
+    console.log({roombaLocation, patchesCleaned, dirtCoords})
 }
