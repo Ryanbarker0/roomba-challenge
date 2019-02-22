@@ -29,7 +29,10 @@ module.exports = (roomDimensions, startCoords, directions, dirtCoords) => {
                 console.log('default output')
         }
     }
-    directRoomba('E')
+    directions.forEach( (direction) => {
+        console.log({direction, roombaLocation})
+        directRoomba(direction)
+    })
 
     console.log(roombaLocation)
 }
