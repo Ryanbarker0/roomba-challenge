@@ -26,10 +26,8 @@ const runApplication = () => {
         // only the dirt coordinates remain
         const dirtCoords = inputCopy
 
-        console.log({roomDimensions, startCoords, directions, dirtCoords})
-
+        // running logic module to move the roomba
         roombaLogic(roomDimensions, startCoords, directions, dirtCoords)
-
     })
 }
 
