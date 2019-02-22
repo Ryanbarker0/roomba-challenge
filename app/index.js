@@ -3,7 +3,7 @@ var roombaLogic = require('./roombaLogic')
 
 const runApplication = () => {
 
-    fs.readFile('app/input.txt', 'utf8', function (err, data) {
+    fs.readFile('app/input.txt', 'utf8', (err, data) => {
         if (err) {
             console.log('Invalid input - the file is unreadable.') 
         }
